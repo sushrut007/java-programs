@@ -1,0 +1,52 @@
+// guess the number in java.
+import java.util.*;
+class game // class for game 
+{
+    public int number ; // variable to store random number
+    public int your_number; // variable to store players input number
+    void number(){
+        Random r = new Random();
+        this.number = r.nextInt(0,100); // generating random number
+    }
+    void TakeUserInput(){
+        Scanner s = new Scanner(System.in);
+        System.out.println("guess the number(from 0 to 100) : ");
+        your_number = s.nextInt(); // players input number
+
+    }
+    boolean IsCorrectNumber(){
+        if (your_number == number) // condition to check players and random number are same
+        {
+            System.out.println("guess is right ! ");
+            System.out.println("=========================== game is finished ===========================");
+            return true;
+        }
+        else if (your_number<number) // condition to check players numbers is less than random number
+        {
+            System.out.println("too less...."); // hint for player
+            System.out.println("********* try again **********");
+        }
+        else if (your_number>number) // condition to check players numbers is greatter than random number
+        {
+            System.out.println("to high...."); // hint for player
+            System.out.println("********* try again **********");
+        }
+        return false;
+    }
+}
+public class Q56 // main class (save code as class name.java)
+{
+    public static void main(String[] args) {
+        System.out.println("========================= Welcome to the game =========================");
+        System.out.println("=================== game name is guess the number =====================");
+        game s = new game();
+        s.number(); // call function to generate random number
+        boolean a = false;
+        while(!a) // loops for players input till number get same
+        {
+            s.TakeUserInput(); // call function to input players number
+            a = s.IsCorrectNumber(); // call function to check both numbers are equal
+
+        }
+    }
+}
