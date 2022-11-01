@@ -6,7 +6,7 @@ class game // class for game
     public int your_number; // variable to store players input number
     void number(){
         Random r = new Random();
-        this.number = r.nextInt(0,100); // generating random number
+        this.number = r.nextInt(100); // generating random number
     }
     void TakeUserInput(){
         Scanner s = new Scanner(System.in);
