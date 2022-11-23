@@ -60,6 +60,6 @@ public class Q17 // main class (save code as class name.java)
                 }
                 break ;
         }
-        System.out.println("==================== game is finished ====================");
+       
     }
 }
